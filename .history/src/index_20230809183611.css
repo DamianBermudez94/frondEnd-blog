@@ -148,7 +148,7 @@ body{
 /*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
 
 .content{
-
+  height: 600px;
   grid-area: content;
   background: #f6f7f9;
   display: flex;
@@ -183,7 +183,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 225px;
 }
 .articulo-img img{
   width: 500px;
@@ -191,13 +190,6 @@ body{
 }
 .articulo-item .edit{
   margin-right: 7px;
-}
-.articulo-datos{
-  text-align: left;
-}
-.title-articulo{
-  font-size: 25px;
-  
 }
 .button,
 button,
@@ -217,22 +209,18 @@ input[type="button"]{
   cursor: pointer;
   transition: all 300ms;
 }
-.articulo-borrar{
-  margin-right: 20px;
-}
-.articulo-item .articulo-borrar:hover{
 
-  background: #9b0202;
-}
-
-.articulo-item .articulo-editar:hover{
+.articulo-item .edit:hover{
   background: #e77b00;
+}
+
+.articulo-item .delete:hover{
+  background: #9b0202;
 }
 
 /*ESTILOS BARRA LATERAL*/
 
 .lateral{
-  width: 400px;
   grid-area: lateral;
   background: #f6f7f9;
   border-left: 1px solid #ddd;
