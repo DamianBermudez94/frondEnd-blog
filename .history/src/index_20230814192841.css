@@ -286,16 +286,13 @@ textarea
 .grup-form label{
  display: block;
   text-align: left;
-
+  outline: 0;
   color: #444;
   margin-bottom: 5px;
 }
-.grup-form input,
-.grup-form textarea{
-  border: 1px solid #03228f;
+.grup-form input{
+
    margin-bottom: 5px;
-   outline: 0;
-   margin-top: 0;
  }
 /*ESTILOS PARA EL PIE DE PÁGINA*/
 .footer{

@@ -14,7 +14,7 @@ const Articulos = () => {
   const conseguirArticulos = async () => {
     const {datos, cargando} = await Peticion(Global.url+"articulos","GET")
   
-    console.log("holaaa",datos);
+    console.log(datos);
     if (datos.status === "success") {
       console.log(datos.listado);
       setArticulos(datos.listado);

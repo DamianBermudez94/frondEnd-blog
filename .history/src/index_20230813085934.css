@@ -250,12 +250,12 @@ input[type="button"]{
   box-shadow: 0px 0px 6px #ddd;
 }
 
-input[type="text"],
-input[type="text"],
-textarea,
-input[type="text"],
-input[type="text"],
-textarea
+.lateral input[type="text"],
+.lateral input[type="text"],
+.lateral textarea,
+.edit_form input[type="text"],
+.edit_form input[type="text"],
+.edit_form textarea
 {
   display: block;
   margin: 0 auto;
@@ -280,23 +280,7 @@ textarea
   border-top: 1px solid #ddd;
   margin-top: 10px;
 }
-.formulario{
- margin-top: 0;
-}
-.grup-form label{
- display: block;
-  text-align: left;
 
-  color: #444;
-  margin-bottom: 5px;
-}
-.grup-form input,
-.grup-form textarea{
-  border: 1px solid #03228f;
-   margin-bottom: 5px;
-   outline: 0;
-   margin-top: 0;
- }
 /*ESTILOS PARA EL PIE DE PÁGINA*/
 .footer{
   max-height: 300px;

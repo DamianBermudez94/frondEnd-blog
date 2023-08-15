@@ -12,7 +12,7 @@ const Articulos = () => {
   }, []);
 
   const conseguirArticulos = async () => {
-    const {datos, cargando} = await Peticion(Global.url+"articulos","GET")
+    const {datos, cargando} = await Peticion(Global.url+"articulo","GET")
   
     console.log("holaaa",datos);
     if (datos.status === "success") {

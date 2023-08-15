@@ -1,25 +1,24 @@
 import { useState } from "react";
 import { useForm } from "../../hooks/useForm"; 
 export const Crear = () => {
-  const { datos, enviado, cambiado} = useForm({});
+  const {formulario, enviado, cambiado} = useForm({});
   const guardarArticulo=(e)=>{
     e.preventDefault();
-    let nuevoArticulo = JSON.stringify( datos);
+    let nuevoArticulo = JSON.stringify(formulario);
     console.log(nuevoArticulo);
   }
   return (
     <div className="jumbo">
       <h1>Crear articulos</h1>
       <p>Formulario para crear articulos</p>
-      <pre>{JSON.stringify(datos)}</pre>
       <form className="formulario" onSubmit={guardarArticulo}>
         <div className="grup-form">
           <label htmlFor="titulo">Titulo</label>
-          <input type="text" name="titulo" onChange={cambiado}/>
+          <input type="text" name="titulo"/>
         </div>
         <div className="grup-form">
           <label htmlFor="contenido">Contenido</label>
-          <textarea type="textarea" name="contenido" onChange={cambiado}/>
+          <textarea type="textarea" name="contenido"/>
         </div>
         <div className="grup-form">
           <label htmlFor="file0">Imagen</label>
