@@ -3,44 +3,24 @@ import { useForm } from "../../hooks/useForm";
 import {Peticion} from "../../helper/Peticion";
 import {Global} from "../../helper/Global"
 export const Crear = () => {
-  const { formulario, cambiado} = useForm({});
+  const { formulario, enviado, cambiado} = useForm({});
   const [resultado, setResultado] = useState("no_enviado");
   const guardarArticulo = async (e)=>{
     e.preventDefault();
-
     let nuevoArticulo = formulario;
     console.log("soy los nuevos datos",nuevoArticulo);
-    const {datos} = await Peticion(Global.url+"crear","POST", nuevoArticulo);
-    console.log("Holis",datos);
-    if (datos.status === "success") {
-      setResultado("guardado")
-    } else {
-      setResultado("error al enviar los datos")
-    }
-    //Obtener la imagen del input
-    const file = document.querySelector("#file")
-    if (datos.status === "success" && file.files[0]) {
+    const datos = await Peticion(Global.url+"crear","POST", nuevoArticulo);
+    if (datos.status === "success" || !enviado === "") {
+      
       setResultado("guardado");
-
-      //Creamos un formData para guardar la imagen
-      const formData = new FormData();
-
-      //Guardamos la imagen con el name del input y seleccionando el archivo del files
-      formData.append("file0",file.files[0]);
-
-      // Hacemos la peticion para poder guardar la imagen en la Base de Datos
-      const imgSubir = await Peticion(Global.url+"/subir-imagen/"+datos.articulo._id,"POST", formData ,true);
-
-      console.log("soy la imagen",imgSubir.datos);
-      //Chequeamos que la imagen se haya subido con el formato correcto
-      if (imgSubir.datos.status === "success") {
-        setResultado("guardado");
-      } else {
-        setResultado("error");
-      }
+      alert("Los datos se han guardado correctamente")
+      console.log("Hola mundo!",datos);
     } else {
-      setResultado("error");
+      setResultado("error")
+      alert("Los datos enviados son incorrectos")
+      console.log("Hola perro",datos);
     }
+    console.log(datos);
   }
   return (
     <div className="jumbo">

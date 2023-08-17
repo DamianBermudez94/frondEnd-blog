@@ -6,11 +6,11 @@ export const Listado = ({articulos, setArticulos}) => {
         return (
           <article key={articulo._id} className="articulo-item">
             <div className="articulo-img">
-            {articulo.imagen !="defauld.png" && <img
-                src={Global.url+ "imagen/"+ articulo.imagen}
+            {articulo.imagen !="default.png" && <img
+                src={Global.url+ "imagen "+ articulo.imagen}
                 alt=""
               />}
-              {articulo.imagen =="defauld.png" && <img
+              {!articulo.imagen =="default.png" && <img
                 src="https://cms.rootstack.com/sites/default/files/inline-images/javascript%20logo.png"
                 alt=""
               />}

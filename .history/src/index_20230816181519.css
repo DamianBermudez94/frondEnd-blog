@@ -148,7 +148,7 @@ body{
 /*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
 
 .content{
-  
+
   grid-area: content;
   background: #f6f7f9;
   display: flex;
@@ -156,7 +156,6 @@ body{
   justify-content: flex-start;
   align-items: initial;
   flex-grow: 1;
-  overflow: hidden;
 }
 .jumbo{
   width: 85%;
@@ -187,11 +186,8 @@ body{
   max-height: 225px;
 }
 .articulo-img img{
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  margin: 10px;
-  
+  width: 500px;
+  overflow: hidden;
 }
 .articulo-item .edit{
   margin-right: 7px;
@@ -321,7 +317,7 @@ textarea
 
 @media (max-width: 1085px){
   .content {
-      height: 100vh;
+    height: 100vh;
       flex-flow: column wrap;
       justify-content: center;
       align-items: center;

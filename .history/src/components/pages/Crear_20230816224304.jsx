@@ -15,7 +15,7 @@ export const Crear = () => {
     if (datos.status === "success") {
       setResultado("guardado")
     } else {
-      setResultado("error al enviar los datos")
+      setResultado("error")
     }
     //Obtener la imagen del input
     const file = document.querySelector("#file")

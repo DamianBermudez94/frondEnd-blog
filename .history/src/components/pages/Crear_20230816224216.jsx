@@ -12,12 +12,8 @@ export const Crear = () => {
     console.log("soy los nuevos datos",nuevoArticulo);
     const {datos} = await Peticion(Global.url+"crear","POST", nuevoArticulo);
     console.log("Holis",datos);
-    if (datos.status === "success") {
-      setResultado("guardado")
-    } else {
-      setResultado("error al enviar los datos")
-    }
-    //Obtener la imagen del input
+
+      //Obtener la imagen del input
     const file = document.querySelector("#file")
     if (datos.status === "success" && file.files[0]) {
       setResultado("guardado");

@@ -12,22 +12,13 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
     };
   }
   if (metodo === "POST" || metodo === "PUT") {
-    let  body = JSON.stringify(datosGuardar);
-    if (archivos) {
-      opciones = {
-        method: metodo,
-        body:datosGuardar,
-      };
-    }else{
-      opciones = {
-        method: metodo,
-        body,
-        headers: {
-          "Content-Type": "application/json",
-        }
-      };
-    }
- 
+    opciones = {
+      method: metodo,
+      body: JSON.stringify(datosGuardar),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    };
   }
     const peticion = await fetch(url, opciones);
           datos = await peticion.json();

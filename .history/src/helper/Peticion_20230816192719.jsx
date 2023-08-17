@@ -12,16 +12,16 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
     };
   }
   if (metodo === "POST" || metodo === "PUT") {
-    let  body = JSON.stringify(datosGuardar);
+    let body = "";
     if (archivos) {
       opciones = {
         method: metodo,
-        body:datosGuardar,
+        body,
       };
     }else{
       opciones = {
         method: metodo,
-        body,
+        body: JSON.stringify(datosGuardar),
         headers: {
           "Content-Type": "application/json",
         }

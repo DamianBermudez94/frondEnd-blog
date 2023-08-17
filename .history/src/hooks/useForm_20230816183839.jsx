@@ -23,7 +23,7 @@ export const useForm = (objetoInicial = {}) => {
         //const {name,value} = target;
       console.log("soy el name",e);
         // Actualizamos el estado con el formulario ya establecido y con los datos nuevos
-        setFormulario({
+        setDatos({
             // Expandimos los datos que ya habia en el estado y le agregamos la nueva informacion: EJ, name.titulo
             ...formulario,
             [e.target.name]: e.target.value
@@ -55,7 +55,7 @@ export const useForm = (objetoInicial = {}) => {
     }
   
     return{
-        formulario,
+        datos,
         cambiado,
         handleSubmit,
         enviado

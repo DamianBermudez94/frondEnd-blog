@@ -12,7 +12,7 @@ export const Peticion = async (url, metodo, datosGuardar = "", archivos = false)
     };
   }
   if (metodo === "POST" || metodo === "PUT") {
-    let  body = JSON.stringify(datosGuardar);
+    let  body =JSON.stringify(datosGuardar);
     if (archivos) {
       opciones = {
         method: metodo,

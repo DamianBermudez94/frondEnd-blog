@@ -12,16 +12,14 @@ export const Crear = () => {
     console.log("soy los nuevos datos",nuevoArticulo);
     const {datos} = await Peticion(Global.url+"crear","POST", nuevoArticulo);
     console.log("Holis",datos);
-    if (datos.status === "success") {
-      setResultado("guardado")
-    } else {
-      setResultado("error al enviar los datos")
-    }
-    //Obtener la imagen del input
     const file = document.querySelector("#file")
     if (datos.status === "success" && file.files[0]) {
       setResultado("guardado");
 
+
+      //Obtener la imagen del input
+    
+    
       //Creamos un formData para guardar la imagen
       const formData = new FormData();
 
@@ -33,7 +31,7 @@ export const Crear = () => {
 
       console.log("soy la imagen",imgSubir.datos);
       //Chequeamos que la imagen se haya subido con el formato correcto
-      if (imgSubir.datos.status === "success") {
+      if (imgSubir === "success") {
         setResultado("guardado");
       } else {
         setResultado("error");
